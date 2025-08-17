@@ -1,8 +1,134 @@
-/*
+.todo-file {
+	margin-bottom: 12px;
+	border-left: 2px solid var(--background-modifier-border);
+	padding-left: 8px;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.todo-file .todo-item {
+	padding-left: 16px;
+	cursor: pointer;
+	padding: 4px 8px 4px 16px;
+	margin: 2px 0;
+	border-radius: 4px;
+	font-size: 0.9em;
+	line-height: 1.4;
+}
 
-If your plugin does not need CSS, delete this file.
+.todo-file .todo-item:hover {
+	background-color: var(--background-secondary-alt);
+}
 
-*/
+.todo-file-name {
+	font-size: 0.95em;
+	font-weight: 600;
+	color: var(--text-accent);
+	margin-bottom: 4px;
+}
+
+.todo-count-badge {
+	font-size: 0.8em;
+	font-weight: 500;
+	color: var(--text-muted);
+	background: var(--background-modifier-border);
+	border-radius: 10px;
+	padding: 2px 6px;
+	margin-left: 6px;
+}
+
+.todo-item-icon {
+	margin-right: 6px;
+	opacity: 0.8;
+}
+
+/* Folder styling */
+.todo-folder {
+	margin-bottom: 8px;
+}
+
+.todo-folder>summary {
+	font-size: 0.9em;
+	font-weight: 500;
+	color: var(--text-muted);
+	cursor: pointer;
+	padding: 2px 4px;
+	border-radius: 3px;
+}
+
+.todo-folder>summary:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+/* Button container styling */
+.todo-tree-buttons {
+	margin-bottom: 16px;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+}
+
+.todo-tree-buttons button {
+	font-size: 0.8em;
+	padding: 4px 8px;
+	border-radius: 3px;
+	border: 1px solid var(--background-modifier-border);
+	background: var(--background-secondary);
+	color: var(--text-muted);
+	cursor: pointer;
+}
+
+.todo-tree-buttons button:hover {
+	background: var(--background-modifier-hover);
+}
+
+/* TODO line highlighting */
+.todo-highlight-line {
+	background-color: var(--text-highlight-bg) !important;
+	border-left: 3px solid var(--text-accent) !important;
+	animation: todo-flash 2s ease-out;
+}
+
+@keyframes todo-flash {
+	0% {
+		background-color: var(--text-accent);
+		opacity: 0.8;
+	}
+
+	10% {
+		background-color: var(--text-highlight-bg);
+		opacity: 1;
+	}
+
+	100% {
+		background-color: var(--text-highlight-bg);
+		opacity: 0.7;
+	}
+}
+
+/* TODO text highlighting (for the specific text within the line) */
+.todo-text-highlight {
+	background-color: var(--text-accent) !important;
+	color: var(--text-on-accent) !important;
+	border-radius: 2px;
+	padding: 1px 2px;
+	animation: todo-text-flash 2s ease-out;
+}
+
+@keyframes todo-text-flash {
+	0% {
+		background-color: var(--text-accent);
+		opacity: 1;
+		transform: scale(1.05);
+	}
+
+								20% {
+									background-color: var(--text-accent);
+									opacity: 0.9;
+									transform: scale(1);
+								}
+
+								100% {
+									background-color: var(--text-accent);
+									opacity: 0.6;
+									transform: scale(1);
+								}
+								}
